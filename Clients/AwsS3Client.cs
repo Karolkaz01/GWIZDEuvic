@@ -17,7 +17,7 @@ public class AwsS3Client : IAwsS3Client
 
     public AwsS3Client()
     {
-        BasicAWSCredentials credentials = new BasicAWSCredentials("AKIA4HHW3VKDBWB5OINN", "96Cs+50wBb5oWthSIBv06pDxPobi9OFbb1zksM/4");
+        BasicAWSCredentials credentials = new BasicAWSCredentials("xyz", "abc");
         _s3Client = new AmazonS3Client(credentials, RegionEndpoint.EUCentral1);
     }
 
