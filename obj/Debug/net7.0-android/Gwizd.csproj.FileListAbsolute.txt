@@ -1936,3 +1936,15 @@ C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\stamp\_Conver
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\AWSSDK.Core.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\AWSSDK.Core.pdb
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\AWSSDK.Extensions.NETCore.Setup.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\AWSSDK.Extensions.NETCore.Setup.pdb
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\AWSSDK.S3.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\AWSSDK.S3.pdb
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.FileSystemGlobbing.dll

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ONzw/04us+HvOkPeFVZT9jGQjTZEAHFWTtDJR+ZggfBFq2huJZsjmiUjfmGrhCIJ6zrLGUVMO16hEOOVBYnpWw==",
+  "dgSpecHash": "IJ6AATMaug/WVu+Jwu4rAerrF0+22kq5u7CEJikAAAaMAwbjkuISHF62s0bd2Rqb9slZ3uNUIMupQeMMj6oYmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\borowskz\\source\\repos\\GWIZDEuvic\\Gwizd.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\borowskz\\.nuget\\packages\\awssdk.core\\3.7.202.17\\awssdk.core.3.7.202.17.nupkg.sha512",
+    "C:\\Users\\borowskz\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.7\\awssdk.extensions.netcore.setup.3.7.7.nupkg.sha512",
+    "C:\\Users\\borowskz\\.nuget\\packages\\awssdk.s3\\3.7.205.3\\awssdk.s3.3.7.205.3.nupkg.sha512",
     "C:\\Users\\borowskz\\.nuget\\packages\\googlegson\\2.9.1\\googlegson.2.9.1.nupkg.sha512",
     "C:\\Users\\borowskz\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\borowskz\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

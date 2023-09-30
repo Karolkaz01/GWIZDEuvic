@@ -4,7 +4,7 @@ AreAnyAssembliesTrimmed=false
 				AOTCompiler=
 				AOTOutputDirectory=obj\Debug\net7.0-maccatalyst\maccatalyst-x64\nativelibraries/aot-output/
 				AppBundleManifestPath=bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Gwizd.app\Contents/Info.plist
-				CacheDirectory=C:\Users\borowskz\source\repos\Gwizd\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\linker-cache
+				CacheDirectory=C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\linker-cache
 				
 				Debug=true
 				DeploymentTarget=
@@ -183,7 +183,7 @@ FrameworkAssembly=System.Private.CoreLib
 				Interpreter=all
 				IntermediateLinkDir=obj\Debug\net7.0-maccatalyst\maccatalyst-x64\linked\
 				InvariantGlobalization=false
-				ItemsDirectory=C:\Users\borowskz\source\repos\Gwizd\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\linker-items
+				ItemsDirectory=C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\linker-items
 				IsAppExtension=false
 				IsSimulatorBuild=
 				LibMonoLinkMode=dylib
