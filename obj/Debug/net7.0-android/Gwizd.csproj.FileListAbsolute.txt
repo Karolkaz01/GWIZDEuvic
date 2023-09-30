@@ -1948,3 +1948,13 @@ C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\asset
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\android\assets\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\dzik.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\dzik.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\dzik.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\dzik.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\dzik.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\dzik_menu.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\dzik_menu.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\dzik_menu.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\dzik_menu.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\dzik_menu.png

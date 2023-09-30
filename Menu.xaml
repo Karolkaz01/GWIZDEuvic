@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gwizd.MenuPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Nasi futrzaści przyjaciele są bliżej niż myślisz!"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Nasi futrzaści przyjaciele są bliżej niż myślisz!"
+                FontSize="26"
+                HorizontalOptions="Center" />
+
+            <!--<Image
+                Source="dzik_menu.svg"
+                SemanticProperties.Description="Dzik!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Spotkasz mnie na swojej drodze?"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Spotkasz mnie na swojej drodze?"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Zrób mi zdjęcie!"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Zrób mi zdjęcie!"
+                FontSize="20"
+                HorizontalOptions="Center" />-->
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <!-- Photo Row -->
+                    <RowDefinition Height="12" />
+                    <!-- First Text Row -->
+                    <RowDefinition Height="12" />
+                    <RowDefinition Height="15" />
+                    <!-- Second Text Row -->
+                </Grid.RowDefinitions>
+
+                <!-- Photo -->
+                <Image Source="dzik_menu.svg" Grid.Row="0" Aspect="AspectFill"/>
+
+                <!-- First Text -->
+                <Label Text="Zrób mi zdjęcie!" Grid.Row="0" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Margin="15,37"/>
+
+                <!-- Second Text -->
+                <Label Text="Spotkasz mnie na swojej drodze?" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Margin="15,10"/>
+
+                <Button
+                    x:Name="ReportBtn"
+                    Text="Zgłoś zwierzę"
+                    SemanticProperties.Hint="Zgłoś zwierzę"
+                    Clicked="OnReportButtonClicked"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Margin="20, 90, 15, 15"
+                    BackgroundColor="Green"
+                    />
+            </Grid>
+
+            <!--<ActivityIndicator 
+                x:Name="LoadingIndicator" 
+                IsRunning="False" 
+                IsVisible="False" />-->
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

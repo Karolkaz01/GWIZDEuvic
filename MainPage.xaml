@@ -3,37 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gwizd.MainPage">
 
-    <ScrollView>
+    <ScrollView
+        Background="#c5ffdc">
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
 
             <Image
-                Source="boar.jfif"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="dzik.svg"
+                SemanticProperties.Description="Dzik!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Gwizd"
+                Text="Witamy w aplikacji"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Gwizd!"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
             <Button
+                x:Name="StartBtn"
+                Text="Zaczynamy"
+                SemanticProperties.Hint="Start reporting process"
+                Clicked="OnStartButtonClicked"
+                BackgroundColor="Green"
+                HorizontalOptions="Center" />
+
+            <!--<Button
                 x:Name="ReportBtn"
                 Text="Zgłoś zwierzę"
                 SemanticProperties.Hint="Start reporting process"
                 Clicked="OnReportButtonClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" />-->
+
+            <ActivityIndicator 
+                x:Name="LoadingIndicator" 
+                IsRunning="False" 
+                IsVisible="False" />
 
         </VerticalStackLayout>
     </ScrollView>

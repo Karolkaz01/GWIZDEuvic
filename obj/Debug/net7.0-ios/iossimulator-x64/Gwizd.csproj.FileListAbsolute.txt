@@ -538,3 +538,6 @@ C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-ios\iossimulator-x64\
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-ios\iossimulator-x64\Gwizd.pdb
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-ios\iossimulator-x64\Gwizd.genruntimeconfig.cache
 C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-ios\iossimulator-x64\ref\Gwizd.dll
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\dzik.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\dzik@2x.png
+C:\Users\borowskz\source\repos\GWIZDEuvic\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\dzik@3x.png
