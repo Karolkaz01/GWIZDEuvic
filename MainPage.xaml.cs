@@ -1,38 +1,23 @@
-﻿namespace Gwizd;
+﻿using Gwizd.Clients;
+using Gwizd.Services;
+
+namespace Gwizd;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+    public MainPage()
 	{
-		InitializeComponent();
-	}
+        InitializeComponent();
+    }
 
-	private void OnReportButtonClicked(object sender, EventArgs e)
+	private async void OnReportButtonClicked(object sender, EventArgs e)
 	{
         //SemanticScreenReader.Announce(CounterBtn.Text);
-        TakePhoto();
-    }
+        var fileService = new FileService();
+        var fileResult = await fileService.TakePhotoAsync();
 
-    public static async void TakePhoto()
-    {
-        if (MediaPicker.Default.IsCaptureSupported)
-        {
-
-            FileResult photo = await MediaPicker.Default.CapturePhotoAsync();
-
-            if (photo != null)
-            {
-                //TODO: upload to AWS S3, send to Bartek's endpoint 
-
-                // save the file into local storage
-                //string localFilePath = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
-
-                //using Stream sourceStream = await photo.OpenReadAsync();
-                //using FileStream localFileStream = File.OpenWrite(localFilePath);
-
-                //await sourceStream.CopyToAsync(localFileStream);
-            }
-        }
+        var reportId = Guid.NewGuid();
+        var awsClient = new AwsS3Client();
+        await awsClient.UploadFileAsync(reportId.ToString(), fileResult);
     }
 }
-
