@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Gwizd.Extensions;
+using Microsoft.Extensions.Logging;
 
 namespace Gwizd;
 
@@ -18,7 +19,8 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+        builder.RegisterServices();
 
-		return builder.Build();
+        return builder.Build();
 	}
 }
