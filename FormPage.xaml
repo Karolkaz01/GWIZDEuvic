@@ -4,27 +4,14 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Gwizd.FormPage">
 
-    <ScrollView>
+    <ScrollView
+        Margin="20, 10">
         <VerticalStackLayout>
-
-            <!--<Grid RowDefinitions="300, Autho, Auto,Auto,Auto,200,Auto"
-          ColumnDefinitions=".40*, .60*"
-          Padding="20">-->
-
-            <Label
-                x:Name="AnimalFoundLabel"
-                Grid.Row="1"
-                Grid.Column="0"
-                VerticalTextAlignment="Center"
-                FontSize="30"
-                Text="Wykryto zwierzę"
-            />
 
             <Image 
             x:Name="AnimalPhoto"
-            MinimumWidthRequest="150"
-            Grid.ColumnSpan="2"
-            Grid.Column="0"/>
+            HeightRequest="400"
+            />
 
             <Grid ColumnDefinitions=".50*, .50*">
                 <Label
@@ -32,7 +19,7 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     VerticalTextAlignment="Center"
-                    FontSize="30"
+                    FontSize="25"
                     Text="Gatunek:"
                 />
 
@@ -41,7 +28,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     VerticalTextAlignment="Center"
-                    FontSize="30"
+                    FontSize="20"
                     Placeholder="Enter text"
                 />
             </Grid>
@@ -50,17 +37,17 @@
 
                 <Label
 		    x:Name="RaceLabel"
-		    Grid.Row="3"
+            Grid.Row="0"
             Grid.Column="0"
             VerticalTextAlignment="Center"
-            FontSize="20"
+            FontSize="25"
 		    Text="Rasa:"
         />
 
 
                 <Entry
 		    x:Name="RaceEntry"
-		    Grid.Row="3"
+            Grid.Row="0"
             Grid.Column="1"
             VerticalTextAlignment="Center"
             FontSize="20"
@@ -72,15 +59,15 @@
                 <Label
 		    x:Name="TypeLabel"
             VerticalTextAlignment="Center"
-		    Grid.Row="4"
+            Grid.Row="0"
             Grid.Column="0"
-            FontSize="20"
-		    Text="Typ zwierzęcia:"
+            FontSize="25"
+		    Text="Typ:"
         />
 
                 <Entry
 		    x:Name="TypeEntry"
-		    Grid.Row="4"
+            Grid.Row="0"
             Grid.Column="1"
             VerticalTextAlignment="Center"
             FontSize="20"
@@ -90,11 +77,10 @@
 
             <Button           
             x:Name="FinishButton"
-            Grid.ColumnSpan="2"
-            Grid.Row="6"
             BackgroundColor="Green"
             Text="Zatwierdź i wyślij"
             Clicked="Button_ClickedAsync"
+            VerticalOptions="End"
         />
         </VerticalStackLayout>
         <!--</Grid>-->

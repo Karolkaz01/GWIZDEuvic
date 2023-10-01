@@ -47,6 +47,10 @@ public partial class FormPage : ContentPage
         catch (Exception ex)
         {
         }
+        finally
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 
     private async void RenderFile()

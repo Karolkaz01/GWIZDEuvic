@@ -4,6 +4,11 @@ public partial class MainPage : ContentPage
 {
     private readonly MenuPage _menuPage;
 
+    public MainPage()
+    {
+        InitializeComponent();
+    }
+
     public MainPage(MenuPage menuPage)
     {
         InitializeComponent();
