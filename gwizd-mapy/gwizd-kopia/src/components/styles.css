@@ -1,0 +1,18 @@
+.info-box {
+  color: black;
+  padding: 4px 10px;
+}
+
+.title {
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.description > p {
+  margin: 0;
+}
