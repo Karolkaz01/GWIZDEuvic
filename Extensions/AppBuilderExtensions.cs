@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using Amazon.S3;
-
 using Gwizd.Clients;
 using Gwizd.Services;
 using Microsoft.Extensions.Configuration;
@@ -12,7 +11,7 @@ public static class AppBuilderExtensions
     public static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
     {
         mauiAppBuilder.Services.AddSingleton<IFileService, FileService>();
-        mauiAppBuilder.Services.AddSingleton<IPredictionApiClient, PredictionApiClient>();
+        mauiAppBuilder.Services.AddSingleton<IApiClient, ApiClient>();
         mauiAppBuilder.Services.AddSingleton<ILocationService, LocationService>();
         mauiAppBuilder.Services.AddSingleton<IAwsS3Client, AwsS3Client>();
 

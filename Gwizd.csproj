@@ -39,7 +39,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -50,14 +49,15 @@
 
 	<ItemGroup>
 	  <None Remove="appsettings.json" />
-	  <None Remove="Resources\Images\boar.jfif" />
 	  <None Remove="Resources\Images\dzik.svg" />
 	  <None Remove="Resources\Images\dzik_menu.svg" />
+	  <None Remove="Resources\Images\thank_you.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.7" />
 		<PackageReference Include="AWSSDK.S3" Version="3.7.205.3" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
@@ -69,6 +69,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ThankYouPopup.xaml.cs">
+	    <DependentUpon>ThankYouPopup.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="MEnu.xaml.cs">
 	    <DependentUpon>Menu.xaml</DependentUpon>
 	  </Compile>
@@ -76,6 +79,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="FormPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ThankYouPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Menu.xaml">

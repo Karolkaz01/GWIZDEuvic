@@ -1,38 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Gwizd.FormPage"
-             Title="FormPage">
-    <Grid RowDefinitions="300, Auto, Auto,Auto,Auto,200,Auto"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Gwizd.FormPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <!--<Grid RowDefinitions="300, Autho, Auto,Auto,Auto,200,Auto"
           ColumnDefinitions=".40*, .60*"
-          Padding="20">
+          Padding="20">-->
 
-        <Image 
-            x:Name="AnimalImage"
+            <Label
+                x:Name="AnimalFoundLabel"
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalTextAlignment="Center"
+                FontSize="30"
+                Text="Wykryto zwierzę"
+            />
+
+            <Image 
+            x:Name="AnimalPhoto"
+            MinimumWidthRequest="150"
             Grid.ColumnSpan="2"
-            Grid.Column="0"
-            Source="boar.jfif"
-		/>
+            Grid.Column="0"/>
 
-        <Label
-		    x:Name="SpeciesLabel"
-		    Grid.Row="1"
-            Grid.Column="0"
-            VerticalTextAlignment="Center"
-            FontSize="30"
-		    Text="Gatunek:"
-        />
+            <Grid ColumnDefinitions=".50*, .50*">
+                <Label
+                    x:Name="SpeciesLabel"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    VerticalTextAlignment="Center"
+                    FontSize="30"
+                    Text="Gatunek:"
+                />
 
-        <Entry
-		    x:Name="SpeciesEntry"
-		    Grid.Row="1"
-            Grid.Column="1"
-            VerticalTextAlignment="Center"
-            FontSize="30"
-		    Text="Dzik"
-        />
+                <Entry
+                    x:Name="SpeciesEntry"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    VerticalTextAlignment="Center"
+                    FontSize="30"
+                    Placeholder="Enter text"
+                />
+            </Grid>
 
-        <Label
+            <Grid ColumnDefinitions=".50*, .50*">
+
+                <Label
 		    x:Name="RaceLabel"
 		    Grid.Row="3"
             Grid.Column="0"
@@ -42,7 +58,7 @@
         />
 
 
-        <Entry
+                <Entry
 		    x:Name="RaceEntry"
 		    Grid.Row="3"
             Grid.Column="1"
@@ -50,17 +66,19 @@
             FontSize="20"
 		    Text="Jakaś tam rasa dzika"
         />
+            </Grid>
+            <Grid ColumnDefinitions=".50*, .50*">
 
-        <Label
+                <Label
 		    x:Name="TypeLabel"
             VerticalTextAlignment="Center"
 		    Grid.Row="4"
             Grid.Column="0"
             FontSize="20"
-		    Text="Typ zaierzęcia:"
+		    Text="Typ zwierzęcia:"
         />
 
-        <Entry
+                <Entry
 		    x:Name="TypeEntry"
 		    Grid.Row="4"
             Grid.Column="1"
@@ -68,19 +86,17 @@
             FontSize="20"
 		    Text="Dziki"
         />
+            </Grid>
 
-        <Button           
+            <Button           
             x:Name="FinishButton"
             Grid.ColumnSpan="2"
             Grid.Row="6"
-            Text="Zamieść!"
-            Clicked="Button_Clicked"
+            BackgroundColor="Green"
+            Text="Zatwierdź i wyślij"
+            Clicked="Button_ClickedAsync"
         />
-
-
-
-
-
-
-    </Grid>
+        </VerticalStackLayout>
+        <!--</Grid>-->
+    </ScrollView>
 </ContentPage>

@@ -70,6 +70,8 @@
                 IsRunning="False" 
                 IsVisible="False" />
 
+            <Image Source="three_boars.svg" Aspect="AspectFill"/>
+
         </VerticalStackLayout>
     </ScrollView>
 

@@ -1,6 +1,7 @@
 ﻿using Amazon;
 using Amazon.Runtime;
 using Amazon.S3;
+using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Microsoft.Extensions.Configuration;
 
@@ -8,13 +9,14 @@ namespace Gwizd.Clients;
 
 public interface IAwsS3Client
 {
+    Task<GetObjectResponse> GetFileAsync(string fileName);
     Task UploadFileAsync(string fileName, FileResult file);
 }
 
 public class AwsS3Client : IAwsS3Client
 {
     private const string BucketName = "hack-yeah-animals";
-    //private const string FilePath = "C:\\Users\\borowskz\\Desktop\\boar.jfif";
+
     private readonly IAmazonS3 _s3Client;
 
     public AwsS3Client(IConfiguration config)
@@ -30,7 +32,7 @@ public class AwsS3Client : IAwsS3Client
         {
             var fileTransferUtility = new TransferUtility(_s3Client);
             await using Stream sourceStream = await file.OpenReadAsync();
-            
+
             await fileTransferUtility.UploadAsync(new TransferUtilityUploadRequest
             {
                 BucketName = BucketName,
@@ -46,6 +48,10 @@ public class AwsS3Client : IAwsS3Client
         {
             Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
         }
+    }
 
+    public async Task<GetObjectResponse> GetFileAsync(string fileName)
+    {
+        return await _s3Client.GetObjectAsync(BucketName, $"animals/{fileName}_predicted.jpeg");
     }
 }

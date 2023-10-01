@@ -19,7 +19,7 @@ public class Label
     public Bbox Bbox { get; set; }
     public double Confidence { get; set; }
     public string Type { get; set; }
-    public object Breed { get; set; }
+    public string Breed { get; set; }
 }
 
 public class Body

@@ -25,15 +25,17 @@
             <Label
                 Text="Gwizd!"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                FontSize="40"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"/>
 
             <Label
                 Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
                 FontSize="18"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
 
             <Button
                 x:Name="StartBtn"

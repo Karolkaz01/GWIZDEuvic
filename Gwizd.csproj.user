@@ -12,6 +12,9 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="ThankYouPopup.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Menu.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

@@ -1,50 +1,58 @@
 using Gwizd.Clients;
-using Org.Apache.Http.Client;
-using System.Net.Http.Json;
+using CommunityToolkit.Maui.Views;
 
 namespace Gwizd;
 
 public partial class FormPage : ContentPage
 {
-    private readonly HttpClient _httpClient;
-    private readonly MainPage _mainPage;
-    private readonly string id;
+    private readonly IAwsS3Client _awsS3Client;
+    private readonly IApiClient _apiClient;
+    private readonly PredictionResponse _predictionResponse;
+    private readonly Guid _reportId;
+    //private readonly MainPage _mainPage;
 
-    public FormPage(HttpClient httpClient,MainPage mainPage,string id,string species, string race)
+    private static bool _shouldClosePopup = false;
+
+    public FormPage(Guid reportId, 
+        PredictionResponse predictionResponse,
+        IAwsS3Client awsS3Client, 
+        IApiClient apiClient
+        //,
+        //MainPage mainPage
+        )
     {
-        _httpClient = httpClient;
-        _mainPage = mainPage;
-        this.id = id;
-        ((Entry)FindByName("SpeciesEntry")).Text = species;
-        ((Entry)FindByName("RaceEntry")).Text = race;
-        ((Entry)FindByName("TypeEntry")).Text = race;
+        _awsS3Client = awsS3Client;
+        _apiClient = apiClient;
+        _reportId = reportId;
+        _predictionResponse = predictionResponse;
+        //_mainPage = mainPage;
+
         InitializeComponent();
+        RenderFile();
+
+        var prediction = predictionResponse?.Body?.Labels?.FirstOrDefault();
+        ((Entry)FindByName("SpeciesEntry")).Text = prediction?.Name ?? string.Empty;
+        ((Entry)FindByName("RaceEntry")).Text = prediction?.Breed ?? string.Empty;
+        ((Entry)FindByName("TypeEntry")).Text = prediction?.Type ?? string.Empty;
     }
 
-    private async Task Button_ClickedAsync(object sender, EventArgs e)
+    private async void Button_ClickedAsync(object sender, EventArgs e)
     {
         try
         {
-            Location location = await Geolocation.Default.GetLastKnownLocationAsync();
-            var species = ((Entry)FindByName("SpeciesEntry")).Text;
-            var race = ((Entry)FindByName("RaceEntry")).Text;
-            var type = ((Entry)FindByName("TypeEntry")).Text;
-
-            var response = await _httpClient.PostAsJsonAsync("https://mezvs42ny3.execute-api.eu-central-1.amazonaws.com/default/events",
-                new AddEventDTO
-                {
-                    id = id,
-                    animal_type = type,
-                    label = species,
-                    breed = race,
-                    event_type = "reported",
-                    lat = location.Latitude,
-                    lng = location.Longitude
-                });
-            Navigation.PushAsync(_mainPage);
+            await _apiClient.PostReportedAnimal(_reportId, _predictionResponse);
+            var popup = new ThankYouPopup();
+            this.ShowPopup(popup);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
         }
+    }
+
+    private async void RenderFile()
+    {
+        var objectResponse = await _awsS3Client.GetFileAsync(_reportId.ToString());
+        AnimalPhoto.Source = ImageSource.FromStream(() => objectResponse.ResponseStream);
+
     }
 }
