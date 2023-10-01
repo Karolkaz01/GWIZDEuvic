@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gwizd.FormPage"
+             Title="FormPage">
+    <Grid RowDefinitions="300, Auto, Auto,Auto,Auto,200,Auto"
+          ColumnDefinitions=".40*, .60*"
+          Padding="20">
+
+        <Image 
+            x:Name="AnimalImage"
+            Grid.ColumnSpan="2"
+            Grid.Column="0"
+            Source="boar.jfif"
+		/>
+
+        <Label
+		    x:Name="SpeciesLabel"
+		    Grid.Row="1"
+            Grid.Column="0"
+            VerticalTextAlignment="Center"
+            FontSize="30"
+		    Text="Gatunek:"
+        />
+
+        <Entry
+		    x:Name="SpeciesEntry"
+		    Grid.Row="1"
+            Grid.Column="1"
+            VerticalTextAlignment="Center"
+            FontSize="30"
+		    Text="Dzik"
+        />
+
+        <Label
+		    x:Name="RaceLabel"
+		    Grid.Row="3"
+            Grid.Column="0"
+            VerticalTextAlignment="Center"
+            FontSize="20"
+		    Text="Rasa:"
+        />
+
+
+        <Entry
+		    x:Name="RaceEntry"
+		    Grid.Row="3"
+            Grid.Column="1"
+            VerticalTextAlignment="Center"
+            FontSize="20"
+		    Text="Jakaś tam rasa dzika"
+        />
+
+        <Label
+		    x:Name="TypeLabel"
+            VerticalTextAlignment="Center"
+		    Grid.Row="4"
+            Grid.Column="0"
+            FontSize="20"
+		    Text="Typ zaierzęcia:"
+        />
+
+        <Entry
+		    x:Name="TypeEntry"
+		    Grid.Row="4"
+            Grid.Column="1"
+            VerticalTextAlignment="Center"
+            FontSize="20"
+		    Text="Dziki"
+        />
+
+        <Button           
+            x:Name="FinishButton"
+            Grid.ColumnSpan="2"
+            Grid.Row="6"
+            Text="Zamieść!"
+            Clicked="Button_Clicked"
+        />
+
+
+
+
+
+
+    </Grid>
+</ContentPage>
