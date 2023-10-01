@@ -5,15 +5,16 @@ namespace Gwizd;
 
 public partial class MainPage : ContentPage
 {
-    //private bool IsBusy = false;
+    private readonly MenuPage _menuPage;
 
-    public MainPage()
+    public MainPage(MenuPage menuPage)
 	{
         InitializeComponent();
+        _menuPage = menuPage;
     }
 
     private async void OnStartButtonClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MenuPage());
+        await Navigation.PushAsync(_menuPage);
     }
 }
