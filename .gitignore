@@ -378,3 +378,4 @@ Directory.Build.Override.props
 snapshots-diff/
 obj/*
 bin/*
+appsettings.json

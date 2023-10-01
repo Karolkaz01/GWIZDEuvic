@@ -1,34 +1,35 @@
-﻿namespace Gwizd;
+﻿using Gwizd.Clients;
+using Gwizd.Services;
+
+namespace Gwizd;
 
 public partial class MenuPage : ContentPage
 {
-    public MenuPage()
+    private readonly IFileService _fileService;
+    private readonly IAwsS3Client _awsS3Client;
+    private readonly IPredictionApiClient _predictionApiClient;
+
+    public MenuPage(IFileService fileService, IAwsS3Client awsS3Client, IPredictionApiClient predictionApiClient)
 	{
         InitializeComponent();
+        _awsS3Client = awsS3Client;
+        _fileService = fileService;
+        _predictionApiClient = predictionApiClient;
     }
 
-    private void OnReportButtonClicked(object sender, EventArgs e)
+    private async void OnReportButtonClicked(object sender, EventArgs e)
     {
+        var fileResult = await _fileService.TakePhotoAsync();
+
+        LoadingIndicator.IsRunning = true;
+        LoadingIndicator.IsVisible = true;
+
+        var reportId = Guid.NewGuid();
+        await _awsS3Client.UploadFileAsync(reportId.ToString(), fileResult);
+
+        var prediction = await _predictionApiClient.PredictAnimalDetails(reportId);
+
+        LoadingIndicator.IsRunning = false;
+        LoadingIndicator.IsVisible = false;
     }
-
-
- //   private async void OnReportButtonClicked(object sender, EventArgs e)
-	//{
- //       var fileService = new FileService();
- //       var fileResult = await fileService.TakePhotoAsync();
-
- //       LoadingIndicator.IsRunning = true;
- //       LoadingIndicator.IsVisible = true;
-
- //       var reportId = Guid.NewGuid();
- //       var awsClient = new AwsS3Client();
- //       await awsClient.UploadFileAsync(reportId.ToString(), fileResult);
-
-
- //       //call Bartek's endpoint for prediction
-
-
- //       LoadingIndicator.IsRunning = false;
- //       LoadingIndicator.IsVisible = false;
- //   }
 }

@@ -2,6 +2,7 @@
 using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Transfer;
+using Microsoft.Extensions.Configuration;
 
 namespace Gwizd.Clients;
 
@@ -13,11 +14,13 @@ public interface IAwsS3Client
 public class AwsS3Client : IAwsS3Client
 {
     private const string BucketName = "hack-yeah-animals";
+    //private const string FilePath = "C:\\Users\\borowskz\\Desktop\\boar.jfif";
     private readonly IAmazonS3 _s3Client;
 
-    public AwsS3Client()
+    public AwsS3Client(IConfiguration config)
     {
-        BasicAWSCredentials credentials = new BasicAWSCredentials("xyz", "abc");
+        var appSettings = config.GetRequiredSection("AppSettings").Get<AppSettings>();
+        BasicAWSCredentials credentials = new BasicAWSCredentials(appSettings.AwsSettings.Key, appSettings.AwsSettings.Secret);
         _s3Client = new AmazonS3Client(credentials, RegionEndpoint.EUCentral1);
     }
 
@@ -32,7 +35,7 @@ public class AwsS3Client : IAwsS3Client
             {
                 BucketName = BucketName,
                 Key = $"animals/{fileName}.jpeg",
-                InputStream = sourceStream,
+                InputStream = sourceStream
             });
         }
         catch (AmazonS3Exception e)

@@ -47,13 +47,10 @@
                     <!-- Second Text Row -->
                 </Grid.RowDefinitions>
 
-                <!-- Photo -->
                 <Image Source="dzik_menu.svg" Grid.Row="0" Aspect="AspectFill"/>
 
-                <!-- First Text -->
                 <Label Text="Zrób mi zdjęcie!" Grid.Row="0" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Margin="15,37"/>
 
-                <!-- Second Text -->
                 <Label Text="Spotkasz mnie na swojej drodze?" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Margin="15,10"/>
 
                 <Button
@@ -68,10 +65,10 @@
                     />
             </Grid>
 
-            <!--<ActivityIndicator 
+            <ActivityIndicator 
                 x:Name="LoadingIndicator" 
                 IsRunning="False" 
-                IsVisible="False" />-->
+                IsVisible="False" />
 
         </VerticalStackLayout>
     </ScrollView>
